@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <title>The Local Horse knows where you live</title>  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script type="text/javascript">
+    if ( navigator.geolocation ) {
+      navigator.geolocation.getCurrentPosition(function(pos){
+        $('#location').html("Thanks! You're at: <br />" + pos.coords.latitude + ',' + pos.coords.longitude);
+      });
+    }
+  </script>
+  <style text="text/css">
+    body {
+      color: #333;
+      font: 20pt/1.4 Cambria,Georgia,sans-serif;
+    }
+  
+    #wrapper {
+      width: 80%;
+      margin: 5% auto;
+      min-width: 600px;
+    }
+    
+    img {
+      float: left;
+      width: 50%;
+    }
+    
+    blockquote {
+      float: right;
+      width: 40%;
+      margin-top: 10%;
+    }
+    
+    h3 {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Via http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ */
+    .rectangle-speech-border {
+    	position:relative; 
+    	padding:50px 15px; 
+    	margin:1em 0 3em;
+    	border:10px solid #5a8f00; 
+    	text-align:center; 
+    	color:#333;
+    	background:#fff; 
+    	/* css3 */
+    	-webkit-border-radius:20px;
+    	-moz-border-radius:20px;
+    	border-radius:20px;
+    }
+
+    /* creates larger curve */
+    .rectangle-speech-border:before {
+    	content:""; 
+    	position:absolute; 
+    	z-index:10; 
+    	bottom:-40px; 
+    	left:50px; 
+    	width:50px; 
+    	height:30px;
+    	border-style:solid; 
+    	border-width:0 10px 10px 0; 
+    	border-color:#5a8f00; 
+    	background:transparent;
+    	/* css3 */
+    	-webkit-border-bottom-right-radius:80px 50px;
+    	-moz-border-radius-bottomright:80px 50px;
+    	border-bottom-right-radius:80px 50px;
+        /* reduce the damage in FF3.0 */
+        display:block; 
+    }
+
+    /* creates smaller curve */
+    .rectangle-speech-border:after {
+    	content:""; 
+    	position:absolute; 
+    	z-index:10; 
+    	bottom:-40px; 
+    	left:50px; 
+    	width:20px; 
+    	height:30px; 
+    	border-style:solid; 
+    	border-width:0 10px 10px 0; 
+    	border-color:#5a8f00; 
+    	background:transparent;
+    	/* css3 */
+    	-webkit-border-bottom-right-radius:40px 50px; 
+    	-moz-border-radius-bottomright:40px 50px; 
+    	border-bottom-right-radius:40px 50px; 
+        /* reduce the damage in FF3.0 */
+        display:block; 
+    }
+
+    /* creates a small circle to produce a rounded point where the two curves meet */
+    .rectangle-speech-border > :first-child:before {
+    	content:""; 
+    	position:absolute; 
+    	bottom:-40px; 
+    	left:45px; 
+    	width:10px; 
+    	height:10px;
+    	background:#5a8f00;
+    	/* css3 */
+    	-webkit-border-radius:10px;
+    	-moz-border-radius:10px;
+    	border-radius:10px;
+    }
+
+    /* creates a white rectangle to cover part of the oval border*/
+    .rectangle-speech-border > :first-child:after {
+    	content:""; 
+    	position:absolute; 
+    	bottom:-10px; 
+    	left:76px; 
+    	width:24px; 
+    	height:15px; 
+    	background:#fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <img src="horse.jpg" id="horse" alt="The Local Horse" />
+    <blockquote class="rectangle-speech-border">
+      <p id="location">Share your location with me!</p>
+    </blockquote>
+  </div>
+</body>
+</html>
