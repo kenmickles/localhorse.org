@@ -7,7 +7,7 @@
   <script type="text/javascript">
     if ( navigator.geolocation ) {
       navigator.geolocation.getCurrentPosition(function(pos){
-        $('#location').html("Thanks! You're at: <br />" + pos.coords.latitude + ',' + pos.coords.longitude);
+        $('#location').html("Hello! You're at: <br />" + pos.coords.latitude + ',' + pos.coords.longitude);
       });
     }
   </script>
@@ -23,7 +23,7 @@
       min-width: 600px;
     }
     
-    img {
+    img#horse {
       float: left;
       width: 50%;
     }
