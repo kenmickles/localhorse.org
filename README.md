@@ -1,0 +1,1 @@
+None of the other sites that give you your latitude and longitude have a horse on them, so I made one that does.
